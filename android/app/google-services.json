@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "227871371846",
+    "project_id": "dihliz-d0cce",
+    "storage_bucket": "dihliz-d0cce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:227871371846:android:7aa887114c53d86fc75047",
+        "android_client_info": {
+          "package_name": "com.example.dihliz_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "227871371846-f7vhejnc80pr58hvm04orr6bknp012n0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dihliz_app",
+            "certificate_hash": "455f103e7e957639ae726224305241d0af9f8037"
+          }
+        },
+        {
+          "client_id": "227871371846-umcrecql37orbqndr4cjpqh7q7vkt226.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJGC7fg3pkyuRN3g4dxeQmsK2_He_CNXk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "227871371846-umcrecql37orbqndr4cjpqh7q7vkt226.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
