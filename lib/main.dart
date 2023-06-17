@@ -1,5 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dihliz_app/Auth_Screens/loginscreen.dart';
 import 'package:dihliz_app/screens/Home_screen.dart';
+import 'package:dihliz_app/screens/firebase_screen.dart';
 import 'package:dihliz_app/screens/splash%20screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -11,10 +13,8 @@ import 'Providers/inventory_provider.dart';
 import 'Providers/selfprovider.dart';
 
 void main() async{
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
+WidgetsFlutterBinding.ensureInitialized();
 
-  );
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (_) => SelfProvider()),
@@ -22,6 +22,7 @@ void main() async{
     ],
     child: MyApp(),
   ));
+
 }
 
 class MyApp extends StatelessWidget {
@@ -36,18 +37,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: StreamBuilder(
-        stream: FirebaseAuth.instance.authStateChanges(),
-        builder: (ctx, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return SplashScreen();
-          }
-          if (snapshot.hasData) {
-            return const HomePageScreen();
-          }
-          return const LoginScreen();
-        },
-      ),
+      home: FireBaseScreen(),
       builder: EasyLoading.init(),
     );
   }
