@@ -46,7 +46,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
               onTap: () {
                 Navigator.of(context)
                   ..push(MaterialPageRoute(
-                      builder: (context) => GoogleMapScreen()));
+                      builder: (context) => SelfManagementScreen()));
               },
               child: Container(
                 width: MediaQuery.of(context).size.width,

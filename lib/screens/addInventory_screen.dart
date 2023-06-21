@@ -1,6 +1,7 @@
 import 'dart:io';
 
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -48,6 +49,7 @@ class _AddStockScreenState extends State<AddStockScreen> {
       print(pikedImagenew);
     });
   }
+  final productdata=FirebaseFirestore.instance.collection("Product").get();
 
   @override
   Widget build(BuildContext context) {
@@ -138,6 +140,10 @@ class _AddStockScreenState extends State<AddStockScreen> {
                       File(pikedImagenew!.path),
                       '${_Weidth.text}',
                     ));
+                    Map<String,dynamic> data={
+                      "Name":_nameController.text,"Width":_Weidth.text,"Stock ID":_StockId.text};
+                      FirebaseFirestore.instance.collection("Product").add(data);
+
                   },
                   child: Text('Add Stock'))
             ],

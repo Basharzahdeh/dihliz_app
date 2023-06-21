@@ -14,7 +14,7 @@ import 'Providers/selfprovider.dart';
 
 void main() async{
 WidgetsFlutterBinding.ensureInitialized();
-
+await Firebase.initializeApp();
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (_) => SelfProvider()),
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: FireBaseScreen(),
+      home: HomePageScreen(),
       builder: EasyLoading.init(),
     );
   }
